@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --build",
     "clean": "rimraf dist",
     "test": "jest",
     "start": "node dist/src/index.js"
