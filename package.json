@@ -1,0 +1,27 @@
+{
+  "name": "ts-experiments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "test": "lerna run test",
+    "pretty": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:benr-dev/ts-experiments.git"
+  },
+  "author": "benr-dev",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/node14": "1.x",
+    "jest": "28.x",
+    "lerna": "5.x",
+    "prettier": "2.x",
+    "rimraf": "3.x",
+    "typescript": "4.x"
+  }
+}
