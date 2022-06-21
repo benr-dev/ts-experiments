@@ -10,5 +10,14 @@
   },
   "author": "benr-dev",
   "license": "MIT",
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@babel/core": "7.x",
+    "@babel/preset-env": "7.x",
+    "@babel/preset-typescript": "^7.17.12",
+    "babel-jest": "28.x",
+    "jest": "28.x"
+  }
 }

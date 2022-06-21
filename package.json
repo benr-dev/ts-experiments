@@ -18,7 +18,6 @@
   "license": "MIT",
   "devDependencies": {
     "@tsconfig/node14": "1.x",
-    "jest": "28.x",
     "lerna": "5.x",
     "prettier": "2.x",
     "rimraf": "3.x",
