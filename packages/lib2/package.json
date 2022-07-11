@@ -5,13 +5,12 @@
   "main": "dist/src/index",
   "scripts": {
     "build": "tsc --build",
-    "clean": "rimraf dist",
-    "test": "jest"
+    "clean": "rimraf dist"
   },
   "author": "benr-dev",
   "license": "MIT",
   "dependencies": {
-    "@benr-ts-experiments/lib1": "1.0.0"
+    "@benr-ts-experiments/lib1": "*"
   },
   "files": [
     "dist"

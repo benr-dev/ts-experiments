@@ -6,13 +6,13 @@
   "scripts": {
     "build": "tsc --build",
     "clean": "rimraf dist",
-    "test": "jest",
     "start": "node dist/src/index.js"
   },
   "author": "benr-dev",
   "license": "MIT",
   "dependencies": {
-    "@benr-ts-experiments/lib2": "1.0.0"
+    "@benr-ts-experiments/lib2": "*",
+    "@types/node": "14.x"
   },
   "files": [
     "dist"
