@@ -5,7 +5,7 @@
   "main": "dist/src/index",
   "scripts": {
     "build": "tsc --build tsconfig-build.json",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist coverage out",
     "test": "jest"
   },
   "author": "benr-dev",
