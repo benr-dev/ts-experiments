@@ -4,8 +4,11 @@
   "description": "",
   "main": "dist/src/index",
   "scripts": {
-    "build": "tsc --build",
-    "clean": "rimraf dist"
+    "build": "tsc --build tsconfig-build.json",
+    "clean": "rimraf dist",
+    "echo-concurrently": "concurrently 'npm run echo-1' 'npm run echo-2'",
+    "echo-1": "echo 1",
+    "echo-2": "echo 2"
   },
   "author": "benr-dev",
   "license": "MIT",

@@ -8,7 +8,8 @@
     "build": "lerna run build",
     "clean": "lerna run clean",
     "test": "lerna run test",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "lerna-echo-concurrently": "lerna run echo-concurrently"
   },
   "repository": {
     "type": "git",
