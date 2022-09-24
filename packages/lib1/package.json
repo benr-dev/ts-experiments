@@ -5,8 +5,9 @@
   "main": "dist/src/index",
   "scripts": {
     "build": "tsc --build tsconfig-build.json",
+    "build:test": "tsc --build tsconfig-test.json",
     "clean": "rimraf dist coverage out",
-    "test": "jest"
+    "test": "npm run build && npm run build:test && jest"
   },
   "author": "benr-dev",
   "license": "MIT",
