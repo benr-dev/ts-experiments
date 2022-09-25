@@ -35,7 +35,6 @@ npm run lerna-echo-concurrently
 
 To run it without including all possible modules containing that script:
 ```
-```
 npm run lerna-echo-concurrently -- --scope @benr-ts-experiments/lib2
 ```
 
