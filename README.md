@@ -47,3 +47,42 @@ npm run --prefix=packages/lib2 echo-concurrently
 
 sh: 1: concurrently: not found
 ```
+
+# Stage 7
+
+Add Nx to manage build dependencies
+```
+npm install -D nx
+npx nx init
+```
+
+This sets up the nx build and enables the local build cache.
+
+Now set up some script dependencies to increase build efficiency.  This avoids the need for scripts to explicitly declare the same dependencies at the package level, which is obviously unneeded duplication.
+
+In nx.json:
+```
+...
+"tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build","test"]
+      }
+    }
+  }
+},
+```
+This says that any time a build or test script is executed, cache the result so that, if nothing else changes then the cache version can be used instead or re-running the script.
+
+```
+...
+"targetDefaults": {
+  "build": {
+    "dependsOn": [
+      "^build", "clean"
+    ]
+  }
+}
+```
+This says that any time a build is executed, run the build script of all the dependencies first and the clean script of the local package, before finally running the local package build script.

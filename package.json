@@ -27,6 +27,7 @@
     "babel-jest": "28.x",
     "jest": "28.x",
     "lerna": "^5.1.8",
+    "nx": "^14.7.13",
     "prettier": "2.x",
     "rimraf": "3.x",
     "ts-node": "^10.8.1",
