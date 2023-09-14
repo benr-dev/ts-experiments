@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
-    "build:test": "lerna run build:test",
-    "clean": "lerna run clean",
-    "test": "lerna run test",
+    "build": "nx run-many --target build",
+    "build:test": "nx run-many --target build:test",
+    "clean": "nx run-many --target clean",
+    "test": "nx run-many --target test",
     "pretty": "prettier --write .",
-    "lerna-echo-concurrently": "lerna run echo-concurrently",
+    "lerna-echo-concurrently": "nx run-many --target echo-concurrently",
+    "precommit": "nx run-many --target precommit",
     "prepare": "husky install"
   },
   "repository": {
