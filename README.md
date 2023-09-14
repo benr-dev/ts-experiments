@@ -153,6 +153,8 @@ Add the workspace declaration to root package.json:
   ]
 ```
 
+Remove the bootstrap script from root package.json
+
 Add the workspace declaration to lerna:
 ```
   "useWorkspaces": "true"
