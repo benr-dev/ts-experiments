@@ -133,3 +133,32 @@ In this repo, the new pre-commit hook was detected by git but if your
 ```
 git add .husky/pre-commit
 ```
+
+# Stage 9 - Convert to npm workspaces
+
+Lerna maintainers have indicated they are no longer going to provide support
+for workspace management features since they are bundled with npm, pnpm and yarn.
+https://lerna.js.org/docs/getting-started#adding-lerna-to-an-existing-repo
+
+Remove existing node_modules and package-lock.json files:
+```
+npx lerna clean
+find . -name "package-lock.json" -exec rm {} \;
+```
+
+Add the workspace declaration to root package.json:
+```
+  "workspaces":[
+    "packages/*"
+  ]
+```
+
+Add the workspace declaration to lerna:
+```
+  "useWorkspaces": "true"
+```
+
+Initialise repo:
+```
+npm install
+```
