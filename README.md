@@ -86,3 +86,31 @@ This says that any time a build or test script is executed, cache the result so 
 }
 ```
 This says that any time a build is executed, run the build script of all the dependencies first and the clean script of the local package, before finally running the local package build script.
+
+# Stage 7b Update to node 16
+
+I updated the environment I was using from node 14 to node 16, and took the opportunity to upgrade
+some core packages along the way.
+
+Delete existing node_modules:
+```
+npx lerna clean
+```
+
+Upgrade lerna:
+```
+npm install -D lerna@5.6.2
+```
+
+Fix vulnerable packages:
+```
+npm audit fix
+```
+
+Rebuild binaries:
+```
+npm run bootstrap
+npm run test
+```
+
+Also added an "engines" clause to root package.json to reflect.
