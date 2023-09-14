@@ -164,3 +164,24 @@ Initialise repo:
 ```
 npm install
 ```
+
+# Stage 10 - replace lerna with nx in package scripts
+
+Lerna is no longer recommended for package actions other than version and publish,
+so replace all scripts using lerna with the equivalent nx command
+
+Before:
+```
+    "build": "lerna run build",
+    "build:test": "lerna run build:test",
+    "clean": "lerna run clean",
+    "test": "lerna run test",
+```
+
+After:
+```
+    "build": "nx run-many --target build",
+    "build:test": "nx run-many --target build:test",
+    "clean": "nx run-many --target clean",
+    "test": "nx run-many --target test",
+```
