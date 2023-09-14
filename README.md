@@ -114,3 +114,22 @@ npm run test
 ```
 
 Also added an "engines" clause to root package.json to reflect.
+
+# Stage 8 - Add Husky
+
+```
+npm install -D husky
+npx husky install
+npm pkg set scripts.prepare="husky install"
+```
+
+Add a git precommit hook to run tests
+```
+npx husky add .husky/pre-commit "npm test"
+```
+
+In this repo, the new pre-commit hook was detected by git but if your
+.gitignore blocks it, do
+```
+git add .husky/pre-commit
+```
