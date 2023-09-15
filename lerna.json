@@ -1,7 +1,7 @@
 {
   "packages": ["packages/*"],
   "useNx": true,
-  "version": "independant",
+  "version": "independent",
   "useWorkspaces": "true",
   "command": {
     "version": {
