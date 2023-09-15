@@ -11,7 +11,7 @@
     "pretty": "prettier --write .",
     "lerna-echo-concurrently": "nx run-many --target echo-concurrently",
     "precommit": "nx run-many --target precommit",
-    "prepush": "npm run version-all",
+    "prepush": "npm run version-all -- --yes",
     "postpush": "git push --tags",
     "prepare": "husky install",
     "version-all": "npx lerna version --conventional-commits --no-push"
