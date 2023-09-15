@@ -1,6 +1,6 @@
 {
   "name": "@benr-ts-experiments/app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "dist/index",
   "scripts": {
@@ -11,7 +11,7 @@
   "author": "benr-dev",
   "license": "MIT",
   "dependencies": {
-    "@benr-ts-experiments/lib2": "*"
+    "@benr-ts-experiments/lib2": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "14.x"
