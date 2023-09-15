@@ -13,7 +13,7 @@
     "precommit": "nx run-many --target precommit",
     "disabled_prepush": "npm run version",
     "prepare": "husky install",
-    "version": "npx lerna version --conventional-commits --no-push"
+    "version-all": "npx lerna version --conventional-commits --no-push"
   },
   "repository": {
     "type": "git",
