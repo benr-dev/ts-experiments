@@ -11,7 +11,9 @@
     "pretty": "prettier --write .",
     "lerna-echo-concurrently": "nx run-many --target echo-concurrently",
     "precommit": "nx run-many --target precommit",
-    "prepare": "husky install"
+    "disabled_prepush": "npm run version",
+    "prepare": "husky install",
+    "version": "npx lerna version --conventional-commits --no-push"
   },
   "repository": {
     "type": "git",
