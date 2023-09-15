@@ -223,3 +223,13 @@ script.
     "prepush": "npm run version-all",
     "version-all": "npx lerna version --conventional-commits --no-push"
 ```
+
+Add a postpush hook for husky:
+```
+npx husky add .husky/post-push "npm run postpush"
+```
+
+Add a script to push git tags on postpush.
+```
+    "postpush": "git push --tags",
+```
