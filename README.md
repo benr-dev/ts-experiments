@@ -185,3 +185,41 @@ After:
     "clean": "nx run-many --target clean",
     "test": "nx run-many --target test",
 ```
+
+# Stage 11 - introduce package versioning on push
+
+As source code is changed in the packages, their version number should
+increment to reflect.
+
+Using semver, this means that:
+- on non-code change (eg docs), no version changes
+- on zero impact code change (eg refactor), patch version increments
+- on new features or bugfix which is non-breaking, minor version increments
+- on any breaking change, major version increments
+
+Add a commit message to lerna.json to comply with conventional commits:
+```
+  "command": {
+    "version": {
+      "message": "chore: bump versions"
+    }
+  }
+```
+
+Change the versioning type to independent in lerna.json:
+```
+  "version": "independent",
+```
+
+Add a prepush hook for husky:
+```
+npx husky add .husky/pre-push "npm run prepush"
+```
+
+Add a script to run lerna version on prepush. *Note* this script must not be
+called 'version' as that is the reserved name of a lerna version lifecycle
+script.
+```
+    "prepush": "npm run version-all",
+    "version-all": "npx lerna version --conventional-commits --no-push"
+```
