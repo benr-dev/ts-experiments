@@ -1,6 +1,11 @@
 {
   "packages": ["packages/*"],
   "useNx": true,
-  "version": "0.0.0",
-  "useWorkspaces": "true"
+  "version": "independant",
+  "useWorkspaces": "true",
+  "command": {
+    "version": {
+      "message": "chore: bump version %s"
+    }
+  }
 }
