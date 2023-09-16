@@ -224,12 +224,71 @@ script.
     "version-all": "npx lerna version --conventional-commits --no-push"
 ```
 
-Add a postpush hook for husky:
+Lerna complained about 'main' not existing on 'remote', so a force push
+was necessary to create .git/remotes/origin/main.
 ```
-npx husky add .husky/post-push "npm run postpush"
+git push --no-verify origin main
 ```
 
-Add a script to push git tags on postpush.
+Now, when a feature change is pushed, the version is bumped:
 ```
-    "postpush": "git push --tags",
+› git push                                                               
+
+> ts-experiments@1.0.0 prepush
+> npm run version-all -- --yes
+
+
+> ts-experiments@1.0.0 version-all
+> npx lerna version --conventional-commits --no-push --yes
+
+lerna notice cli v5.6.2
+lerna info versioning independent
+lerna info Looking for changed packages since @benr-ts-experiments/app@1.3.0
+lerna info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
+
+Changes:
+ - @benr-ts-experiments/app: 1.3.0 => 1.4.0
+
+lerna info auto-confirmed 
+lerna info execute Skipping git push
+lerna info execute Skipping releases
+lerna success version finished
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 866 bytes | 866.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
+To github.com:benr-dev/ts-experiments.git
+   21fb85c..b33ff5b  main -> main
+```
+
+Unfortunately, in the absense of git providing a hook on post push,
+the tags that lerna creates to indicate the bump don't get pushed
+so it is necessary to also push tags
+```
+› git push --tags
+
+> ts-experiments@1.0.0 prepush
+> npm run version-all -- --yes
+
+
+> ts-experiments@1.0.0 version-all
+> npx lerna version --conventional-commits --no-push --yes
+
+lerna notice cli v5.6.2
+lerna info versioning independent
+lerna notice Current HEAD is already released, skipping change detection.
+lerna success No changed packages to version 
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 1002 bytes | 1002.00 KiB/s, done.
+Total 8 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github.com:benr-dev/ts-experiments.git
+ * [new tag]         @benr-ts-experiments/app@1.4.0 -> @benr-ts-experiments/app@1.4.0
+
 ```
