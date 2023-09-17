@@ -8,7 +8,8 @@
     "clean": "rimraf dist",
     "echo-concurrently": "concurrently 'npm run echo-1' 'npm run echo-2'",
     "echo-1": "echo 1",
-    "echo-2": "echo 2"
+    "echo-2": "echo 2",
+    "test": "jest"
   },
   "author": "benr-dev",
   "license": "MIT",
