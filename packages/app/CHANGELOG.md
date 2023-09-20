@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/benr-dev/ts-experiments/compare/@benr-ts-experiments/app@1.4.2...@benr-ts-experiments/app@1.5.0) (2023-09-20)
+
+### Features
+
+- minor code change to test versioning ([f8b935b](https://github.com/benr-dev/ts-experiments/commit/f8b935bf0420a9622952406f439a4bee99bd81e6))
+
 ## [1.4.2](https://github.com/benr-dev/ts-experiments/compare/@benr-ts-experiments/app@1.4.0...@benr-ts-experiments/app@1.4.2) (2023-09-17)
 
 **Note:** Version bump only for package @benr-ts-experiments/app
